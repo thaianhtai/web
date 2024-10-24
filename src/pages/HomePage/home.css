@@ -1,0 +1,199 @@
+.navbar {
+    background-color: green;
+}
+.navbar .form-control {
+    width: 100%;
+}
+.custom-image {
+margin-left: 10px;  /* Adds spacing between images */
+margin-right: 10px;
+border-radius: 15px; /* Rounds the corners */
+border: 2px solid #ddd; /* Adds a subtle border */
+}
+.navbar-nav .nav-link {
+    color: white !important;
+}
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.search-form {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+.input-group .form-control {
+    flex: 1;
+}
+.navbar-nav {
+    white-space: nowrap;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-collapse {
+    flex-grow: 0;
+}
+.icon-spacing {
+    margin-right: 5px;
+}
+.category-list {
+    background-color: #f8f9fa;
+    padding: 15px;
+}
+.category-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.category-list ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.category-list ul li img {
+    margin-right: 10px;
+    width: 30px;
+}
+.category-title {
+    font-weight: bold;
+}
+.icon-menu {
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 15px;
+}
+
+.icon-item {
+    width: 100px; /* Set width for each icon box */
+    margin: 0 10px; /* Space between each icon */
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+.icon-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.modal-content {
+    height: auto !important;
+}
+
+.icon-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    white-space: nowrap;         /* Không cho phép xuống dòng */
+    overflow: hidden;            /* Ẩn phần nội dung tràn ra */
+    text-overflow: ellipsis;     /* Hiển thị dấu ba chấm nếu nội dung quá dài */
+    max-width: 100%;             /* Đảm bảo rằng nội dung không tràn quá chiều rộng của thẻ chứa */
+  }
+.icon-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+.product-card {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.product-card img {
+    width: 100%;           /* Chiều rộng của ảnh chiếm 100% chiều rộng của thẻ chứa */
+    height: 200px;         /* Đặt chiều cao cố định */
+    object-fit: cover;     /* Cắt và hiển thị ảnh sao cho vừa khít khung */
+    object-position: center; /* Canh giữa ảnh khi bị cắt */
+  }
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-price {
+    font-weight: bold;
+    color: #e60012;
+}
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+.badge-icons img {
+    width: 25px;
+    margin-right: 5px;
+}
+.product-footer {
+    font-size: 14px;
+    color: #888;
+}
+.icon-menu .icon-item {
+    text-align: center;
+    margin: 0 10px;
+    width: 100px;
+}
+.icon-item img {
+    width: 50px;
+    height: 50px;
+}
+.icon-item .icon-text {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.left-column {
+    padding: 20px;
+}
+.right-column {
+display: flex;
+justify-content: center; /* Căn giữa theo chiều ngang */
+align-items: center; /* Căn giữa theo chiều dọc */
+padding: 0; /* Loại bỏ padding để đảm bảo căn giữa */
+height: auto;
+}
+.right-column .position-relative {
+position: relative; /* Đặt cột chứa ảnh thành relative để sử dụng absolute cho nút đóng */
+}
+
+.right-column .btn-close {
+position: absolute; /* Cho phép nút đóng nằm tự do trong phần chứa ảnh */
+top: 10px; /* Đặt nút cách đỉnh ảnh 10px */
+right: 10px; /* Đặt nút cách bên phải 10px */
+z-index: 10; /* Đảm bảo nút đóng nằm phía trên hình ảnh */
+}
+.right-column img {
+    max-width: 80%; /* Giới hạn kích thước ảnh tối đa 80% */
+    height: auto; /* Giữ nguyên tỷ lệ khung hình */
+    object-fit: contain; /* Đảm bảo ảnh không bị biến dạng */
+    display: block;
+}
+
+.modal-dialog {
+max-width: 800px; /* Chiều rộng của modal */
+height: 70vh; /* Chiều cao modal chiếm 90% viewport height (màn hình) */
+}
+
+.modal-content {
+height: 73%; /* Đảm bảo modal-content chiếm toàn bộ chiều cao modal-dialog */
+}
+
+.modal-body {
+height: 100%; /* Chiều cao modal-body trừ đi chiều cao của header */
+overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+}
+
+.modal-header {
+height: 56px; /* Đặt chiều cao cố định cho modal-header */
+}

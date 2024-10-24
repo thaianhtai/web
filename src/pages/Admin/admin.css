@@ -1,0 +1,55 @@
+.navbar {
+    background-color: green;
+}
+.navbar .form-control {
+    width: 100%;
+}
+.navbar-nav .nav-link {
+    color: white !important;
+}
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.search-form {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+.input-group .form-control {
+    flex: 1;
+}
+.sidebar {
+    padding: 0 60px; /* Padding đều hai bên cho sidebar */
+}
+.navbar-nav {
+    white-space: nowrap;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-collapse {
+    flex-grow: 0;
+}
+.icon-spacing {
+    margin-right: 5px;
+}
+.divider {
+    width: 0; /* Đặt chiều rộng là 0 để sử dụng border */
+    border-left: 1px solid #ccc; /* Sử dụng border-left để tạo đường phân cách */
+    height: 100vh; /* Chiều cao của đường phân cách để nó kéo dài hết chiều cao màn hình */
+    margin: 0; /* Đặt margin là 0 */
+}
+@media (max-width: 900px) {
+    .divider {
+        display: none; /* Ẩn phần tử khi kích thước màn hình nhỏ hơn hoặc bằng 900px */
+    }
+}
+.modal-content-admin {
+    height: 100% !important;
+}

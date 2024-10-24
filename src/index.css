@@ -1,0 +1,44 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/* @import 'antd/dist/antd.min.css'; */
+
+
+/* HeaderComponent.css */
+.navbar {
+  background-color: green;
+}
+.navbar .form-control {
+  width: 100%;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.search-form {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+.input-group .form-control {
+  flex: 1;
+}
+.navbar-nav {
+  white-space: nowrap;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+.icon-spacing {
+  margin-right: 5px;
+}

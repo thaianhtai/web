@@ -1,0 +1,248 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/* @import 'antd/dist/antd.min.css'; */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  display: block;
+  width: 100%;
+}
+.navbar {
+  background-color: green;
+}
+/* Ensure the badge stays on top of the cart icon */
+.nav-item.position-relative {
+  display: inline-block;
+}
+
+/* Adjust the badge size and position */
+#cartCountBadge {
+  font-size: 12px;
+  padding: 2px 5px; /* Smaller padding to make it more compact */
+  position: absolute;
+  top: -10px; /* Move the badge higher */
+  right: -24px; /* Move the badge further left */
+}
+
+/* Đảm bảo ul chứa các tùy chọn bị ẩn khi chưa hover */
+#userOptions {
+  display: none;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0;
+  list-style: none;
+  margin-top: 5px;
+}
+
+#userOptions li a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+#userOptions li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Hiển thị menu khi hover vào phần tử cha của nó */
+.nav-item.dropdown:hover #userOptions {
+  display: block;
+}
+/* Mặc định ẩn dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+}
+
+/* Hiển thị dropdown menu khi hover vào item */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar .form-control {
+  width: 100%;
+}
+.custom-image {
+margin-left: 10px;  /* Adds spacing between images */
+margin-right: 10px;
+border-radius: 15px; /* Rounds the corners */
+border: 2px solid #ddd; /* Adds a subtle border */
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.search-form {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+.input-group .form-control {
+  flex: 1;
+}
+.navbar-nav {
+  white-space: nowrap;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+.icon-spacing {
+  margin-right: 5px;
+}
+.category-list {
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+.category-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.category-list ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.category-list ul li img {
+  margin-right: 10px;
+  width: 30px;
+}
+.category-title {
+  font-weight: bold;
+}
+.icon-menu {
+  padding: 10px;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 15px;
+}
+
+.icon-item {
+  width: 100px; /* Set width for each icon box */
+  margin: 0 10px; /* Space between each icon */
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.icon-item:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-card {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-price {
+  font-weight: bold;
+  color: #e60012;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+.badge-icons img {
+  width: 25px;
+  margin-right: 5px;
+}
+.product-footer {
+  font-size: 14px;
+  color: #888;
+}
+.icon-menu .icon-item {
+  text-align: center;
+  margin: 0 10px;
+  width: 100px;
+}
+.icon-item img {
+  width: 50px;
+  height: 50px;
+}
+.icon-item .icon-text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.modal-body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.left-column {
+  padding: 20px;
+}
+.right-column {
+display: flex;
+justify-content: center; /* Căn giữa theo chiều ngang */
+align-items: center; /* Căn giữa theo chiều dọc */
+padding: 0; /* Loại bỏ padding để đảm bảo căn giữa */
+height: 100%; /* Đảm bảo cột này chiếm toàn bộ chiều cao */
+}
+.right-column .position-relative {
+position: relative; /* Đặt cột chứa ảnh thành relative để sử dụng absolute cho nút đóng */
+}
+
+.right-column .btn-close {
+position: absolute; /* Cho phép nút đóng nằm tự do trong phần chứa ảnh */
+top: 10px; /* Đặt nút cách đỉnh ảnh 10px */
+right: 10px; /* Đặt nút cách bên phải 10px */
+z-index: 10; /* Đảm bảo nút đóng nằm phía trên hình ảnh */
+}
+.right-column img {
+max-width: 80%; /* Giảm kích thước của hình ảnh, điều chỉnh theo nhu cầu */
+height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+margin: auto; /* Tự động căn đều trên dưới và giữa hình ảnh */
+}
+
+.modal-dialog {
+max-width: 800px; /* Chiều rộng của modal */
+height: 70vh; /* Chiều cao modal chiếm 90% viewport height (màn hình) */
+}
+
+.modal-content {
+height: 73%; /* Đảm bảo modal-content chiếm toàn bộ chiều cao modal-dialog */
+}
+
+.modal-body {
+height: 100%; /* Chiều cao modal-body trừ đi chiều cao của header */
+overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+}
+
+.modal-header {
+height: 56px; /* Đặt chiều cao cố định cho modal-header */
+}
