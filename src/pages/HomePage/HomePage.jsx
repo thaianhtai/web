@@ -215,6 +215,7 @@ const HomePage = () => {
                                                             {(product.money / (1 - product.discount_amount / 100)).toFixed(0)} VND
                                                         </p>
                                                         <p className="text-danger">-{product.discount_amount}%</p>
+                                                        
                                                     </>
                                                 )}
                                             </div>

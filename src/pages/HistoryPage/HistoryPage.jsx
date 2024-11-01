@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './HistoryPage.css'; // Đảm bảo đường dẫn đúng
+
 
 const HistoryPage = () => {
     const [orders, setOrders] = useState([]);

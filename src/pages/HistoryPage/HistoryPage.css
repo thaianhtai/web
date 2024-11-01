@@ -1,0 +1,65 @@
+/* Đặt kiểu cho container */
+.container {
+    max-width: 1200px; /* Giới hạn chiều rộng */
+    margin: auto; /* Căn giữa */
+    padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Tiêu đề đơn hàng */
+.order-header {
+    font-size: 2rem; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    color: #333; /* Màu chữ */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    text-align: center; /* Căn giữa */
+}
+
+/* Kiểu cho bảng */
+.table {
+    width: 100%; /* Đảm bảo bảng đầy đủ chiều ngang */
+    border-collapse: collapse; /* Kết hợp các viền */
+}
+
+/* Kiểu cho các ô tiêu đề */
+.table th {
+    background-color: #28a745; /* Màu nền xanh lá cho tiêu đề */
+    color: white; /* Màu chữ trắng */
+    padding: 12px; /* Khoảng cách bên trong */
+    text-align: left; /* Căn trái */
+}
+
+/* Kiểu cho các ô dữ liệu */
+.table td {
+    padding: 10px; /* Khoảng cách bên trong */
+    border: 1px solid #dee2e6; /* Viền nhẹ */
+    text-align: left; /* Căn trái */
+}
+
+/* Kiểu cho các hàng chẵn trong bảng */
+.table tr:nth-child(even) {
+    background-color: #f8f9fa; /* Màu nền nhẹ cho hàng chẵn */
+}
+
+/* Kiểu cho hàng khi di chuột qua */
+.table tr:hover {
+    background-color: #e9ecef; /* Màu nền khi hover */
+}
+
+/* Thông báo khi không có đơn hàng */
+.text-center {
+    color: #888; /* Màu chữ nhạt cho thông báo */
+    font-style: italic; /* Chữ nghiêng */
+    padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.9rem; /* Giảm kích thước chữ trên thiết bị nhỏ */
+        padding: 8px; /* Giảm khoảng cách */
+    }
+
+    .order-header {
+        font-size: 1.5rem; /* Giảm kích thước chữ tiêu đề */
+    }
+}

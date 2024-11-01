@@ -1,10 +1,65 @@
+/* Navbar */
 .navbar {
-    background-color: green;
+    background-color: #28a745; /* Bright green */
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    border-bottom: 3px solid #218838; /* Accent border */
+    transition: background-color 0.3s ease;
 }
+
+.navbar:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Total section */
 .total-section {
-    background-color: #f8f9fa; /* Màu nền nhẹ */
-    border: 1px solid #dee2e6; /* Viền nhẹ */
-    border-radius: 0.375rem; /* Bo góc nhẹ */
-    padding: 1.5rem; /* Khoảng cách bên trong */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #dee2e6;
+    border-radius: 8px; /* Slightly more rounded corners */
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.total-section:hover {
+    transform: translateY(-5px); /* Raised effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Button */
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    border-radius: 8px; /* More rounded */
+    padding: 0.6rem 1.2rem; /* Extra padding */
+    color: #fff;
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 12px; /* Rounded for softer appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Fades and slides out */
+    opacity: 1;
+    transform: translateX(0); /* Slide-in effect */
+}
+
+.notification.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(20px); /* Slide-out effect */
 }

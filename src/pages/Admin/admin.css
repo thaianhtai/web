@@ -1,55 +1,111 @@
+* {
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước phần tử */
+    margin: 0; /* Đặt margin mặc định là 0 */
+    padding: 0; /* Đặt padding mặc định là 0 */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Chọn font chữ */
+    background-color: #f8f9fa; /* Màu nền nhẹ cho toàn bộ trang */
+    color: #333; /* Màu chữ tối */
+    display: flex; /* Sử dụng flexbox để định dạng nội dung */
+    flex-direction: column; /* Sắp xếp theo cột */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao của màn hình */
+}
+
 .navbar {
-    background-color: green;
+    background-color: green; /* Màu nền navbar */
+    padding: 15px; /* Thêm padding cho navbar */
+    position: relative; /* Để có thể định vị các phần tử bên trong */
+    width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng màn hình */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng cho navbar */
 }
+
 .navbar .form-control {
-    width: 100%;
+    width: 100%; /* Đặt chiều rộng của form-control là 100% */
 }
+
 .navbar-nav .nav-link {
-    color: white !important;
+    color: white !important; /* Đặt màu cho các liên kết trong navbar */
+    padding: 10px 15px; /* Thêm padding cho các liên kết */
 }
+
 .navbar-toggler-icon {
-    filter: invert(1);
+    filter: invert(1); /* Đảo ngược màu icon */
 }
+
 .navbar-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    display: flex; /* Sử dụng flexbox cho nội dung của navbar */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
 }
+
 .search-form {
-    flex-grow: 1;
-    margin: 0 20px;
+    flex-grow: 1; /* Tạo khoảng trống cho form tìm kiếm */
+    margin: 0 20px; /* Thêm khoảng cách bên trái và phải */
 }
+
 .input-group .form-control {
-    flex: 1;
+    flex: 1; /* Đặt chiều rộng flex cho input */
 }
+
 .sidebar {
-    padding: 0 60px; /* Padding đều hai bên cho sidebar */
+    padding: 20px; /* Thêm padding cho sidebar */
+    background-color: #fff; /* Màu nền cho sidebar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng cho sidebar */
+    height: calc(100vh - 60px); /* Đặt chiều cao của sidebar */
+    overflow-y: auto; /* Thêm thanh cuộn nếu nội dung vượt quá chiều cao */
 }
+
 .navbar-nav {
-    white-space: nowrap;
+    white-space: nowrap; /* Không cho phép các liên kết trong navbar xuống dòng */
 }
+
 .navbar-brand {
-    display: flex;
-    align-items: center;
+    display: flex; /* Sử dụng flexbox cho thương hiệu */
+    align-items: center; /* Căn giữa theo chiều dọc */
 }
+
 .navbar-collapse {
-    flex-grow: 0;
+    flex-grow: 0; /* Không cho phép navbar-collapse mở rộng */
 }
+
 .icon-spacing {
-    margin-right: 5px;
+    margin-right: 5px; /* Thêm khoảng cách bên phải cho icon */
 }
+
 .divider {
     width: 0; /* Đặt chiều rộng là 0 để sử dụng border */
     border-left: 1px solid #ccc; /* Sử dụng border-left để tạo đường phân cách */
     height: 100vh; /* Chiều cao của đường phân cách để nó kéo dài hết chiều cao màn hình */
     margin: 0; /* Đặt margin là 0 */
 }
+
 @media (max-width: 900px) {
     .divider {
         display: none; /* Ẩn phần tử khi kích thước màn hình nhỏ hơn hoặc bằng 900px */
     }
 }
+
 .modal-content-admin {
-    height: 100% !important;
+    height: 100% !important; /* Đặt chiều cao cho nội dung modal */
+    overflow: hidden; /* Ẩn thanh cuộn nếu không cần thiết */
+    border-radius: 8px; /* Bo góc cho modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng cho modal */
+}
+
+/* Thêm hiệu ứng hover cho các liên kết */
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền khi hover */
+    border-radius: 5px; /* Bo góc cho các liên kết khi hover */
+}
+
+/* Thêm hiệu ứng cho sidebar */
+.sidebar {
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu nền */
+}
+
+.sidebar:hover {
+    background-color: #f1f1f1; /* Màu nền sidebar khi hover */
 }

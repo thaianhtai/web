@@ -1,7 +1,6 @@
 const express = require('express');
 
 const axios = require('axios');
-
 const cheerio = require('cheerio');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -62,13 +61,13 @@ mongoose.connect('mongodb://localhost:27017/shop', {
 
 // Session middleware setup
 app.use(session({
-  secret: 'your_session_secret123', 
+  secret: 'your_session_secret1234567', 
   resave: false,
   saveUninitialized: true,
 }));
 
 // JWT secret key
-const JWT_SECRET = 'your_jwt_secret_key123';
+const JWT_SECRET = 'your_jwt_secret_key1234567';
 
 // MongoDB Schemas
 const roleSchema = new Schema({
@@ -91,6 +90,7 @@ const userSchema = new Schema({
 });
 userSchema.plugin(AutoIncrement, { inc_field: 'id' });
 const User = mongoose.model('User', userSchema);
+
 
 const categorySchema = new Schema({
   category_name: { type: String, required: true },
@@ -232,6 +232,63 @@ app.post('/api/login', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+// API to get all roles
+app.get('/api/roles', async (req, res) => {
+  try {
+    // Lấy tất cả các vai trò từ MongoDB
+    const roles = await Role.find();
+    res.status(200).json(roles); // Trả về danh sách vai trò dưới dạng JSON
+  } catch (error) {
+    console.error('Error fetching roles:', error); // Log lỗi để kiểm tra
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+// API đăng ký người dùng mới
+app.post('/api/register/addmin', async (req, res) => {
+  try {
+    const { username, email, password, numberphone, address, id_role } = req.body;
+
+    // Kiểm tra nếu email đã tồn tại
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email đã được sử dụng.' });
+    }
+
+    // Mã hóa mật khẩu
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Tạo đối tượng người dùng mới
+    const newUser = new User({
+      username,
+      email,
+      password: hashedPassword,
+      googleId: '', // Mặc định là chuỗi trống
+      numberphone,
+      address,
+      id_role
+    });
+
+    // Lưu người dùng mới vào database
+    const savedUser = await newUser.save();
+
+    // Trả về thông tin người dùng mới
+    res.status(201).json({
+      message: 'Người dùng đã được thêm thành công!',
+      user: {
+        id: savedUser._id,
+        username: savedUser.username,
+        email: savedUser.email,
+        numberphone: savedUser.numberphone,
+        address: savedUser.address,
+        id_role: savedUser.id_role
+      }
+    });
+  } catch (error) {
+    console.error('Lỗi khi thêm người dùng:', error);
+    res.status(500).json({ message: 'Đã xảy ra lỗi server.' });
+  }
+});
+
 
 // Registration API
 app.post('/api/register', async (req, res) => {
@@ -893,26 +950,35 @@ app.get('/api/search/suggestions', async (req, res) => {
 
 // API to update a category
 
-
+//api icon
 app.get('/api/icons', async (req, res) => {
   try {
+    // Lấy CSS chứa các lớp biểu tượng từ Bootstrap Icons
     const { data } = await axios.get('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css');
     
-    // Regex to match icon class names
+    // Regex để tìm các tên lớp biểu tượng
     const iconRegex = /\.bi-([a-zA-Z0-9-]+)/g;
     const icons = [];
 
     let match;
+    // Lặp qua tất cả các biểu tượng tìm thấy và thêm vào mảng icons
     while ((match = iconRegex.exec(data)) !== null) {
-      icons.push(`bi-${match[1]}`); // Add the icon class name
+      icons.push(`bi-${match[1]}`); // Thêm tên lớp biểu tượng
     }
 
-    res.status(200).json(icons); // Send the list of icons as a response
+    // Thêm biểu tượng máy tính, tivi và máy ảnh vào danh sách
+    icons.push('bi-laptop');
+    icons.push('bi-tv');
+    icons.push('bi-camera'); // Thêm biểu tượng máy ảnh vào đây
+
+    // Gửi danh sách biểu tượng dưới dạng phản hồi
+    res.status(200).json(icons);
   } catch (error) {
     console.error('Error fetching icons:', error);
     res.status(500).json({ message: 'Failed to fetch icons' });
   }
 });
+
 app.put('/api/categories/:id', authenticateJWT, async (req, res) => {
   try {
     const { id } = req.params; // Get the category ID from the URL
